@@ -28,6 +28,35 @@
 				<configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+		<configuration>
+			<cloudHubDeployment>
+			   <muleVersion>${app.runtime}</muleVersion>
+			   <username>MuleC09</username>
+			   <password>MuleC09</password>
+			   <environment>Sandbox</environment>
+			   <!--  <region>us-east-1a</region> -->
+			   <workerType>Micro</workerType>
+			   <workers>1</workers>
+			   <uri>https://anypoint.mulesoft.com</uri>
+			   <applicationName>app-sample</applicationName>			   
+			</cloudHubDeployment>
+		</configuration>
+		 <executions>
+		   <execution>
+		     <id>deploy</id>
+		     <phase>deploy</phase>
+		     <goals>
+		      <goal>deploy</goal>
+		     </goals>		   
+		   </execution>
+		 </executions>
+			</plugin>
+			
 		</plugins>
 	</build>
 
