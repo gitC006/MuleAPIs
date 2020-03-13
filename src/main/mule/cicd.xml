@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="cicdFlow" doc:id="f7eccadc-b3b0-441b-8d09-9b57a0c55d24" >
 		<http:listener doc:name="Listener" doc:id="88db60be-de2b-413c-9ecb-abf44fb2013b" config-ref="HTTP_Listener_config" path="/cicd"/>
-		<logger level="INFO" doc:name="Logger" doc:id="e2c41348-b093-4671-bd35-1f7976122c81" message="============Hello World============"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e2c41348-b093-4671-bd35-1f7976122c81" message="first logger"/>
 		<set-payload value="=========This is my first CICD Integration project=============" doc:name="Set Payload" doc:id="5c759f28-e9b1-454e-a9b0-e3775c470ce8" />
 		<logger level="INFO" doc:name="Logger" doc:id="f0943c6e-8881-4f92-a894-8ef5bbc3db2a" message="second logger"/>
 	</flow>
