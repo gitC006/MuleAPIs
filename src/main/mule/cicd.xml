@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="692c6241-f36e-4099-ad6b-8e93bb93825d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicdFlow" doc:id="f7eccadc-b3b0-441b-8d09-9b57a0c55d24" >
+		<http:listener doc:name="Listener" doc:id="88db60be-de2b-413c-9ecb-abf44fb2013b" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e2c41348-b093-4671-bd35-1f7976122c81" message="============Hello World============"/>
+		<set-payload value="=========This is my first CICD Integration project=============" doc:name="Set Payload" doc:id="5c759f28-e9b1-454e-a9b0-e3775c470ce8" />
+	</flow>
+</mule>
